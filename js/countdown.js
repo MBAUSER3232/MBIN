@@ -6,7 +6,7 @@
 
 		//array of custom settings
 		var settings = { 
-			'date': null,
+			'date': null, // This option will no longer be used for the 90-day version
 			'format': null
 		};
 
@@ -15,15 +15,29 @@
 			$.extend(settings, options);
 		}
 		
+		// Set the end date 90 days from now. 
+		// Use localStorage to persist the end date across page loads.
+		var endDateKey = 'countdownEndDate-' + thisEl.attr('id');
+		var eventDate;
+
+		if (localStorage.getItem(endDateKey)) {
+			eventDate = parseInt(localStorage.getItem(endDateKey));
+		} else {
+			var now = new Date();
+			now.setDate(now.getDate() + 90);
+			eventDate = now.getTime() / 1000;
+			localStorage.setItem(endDateKey, eventDate);
+		}
+
 		//main countdown function
 		function countdown_proc() {
 			
-			eventDate = Date.parse(settings['date']) / 1000;
 			currentDate = Math.floor($.now() / 1000);
 			
 			if(eventDate <= currentDate) {
 				callback.call(this);
 				clearInterval(interval);
+				localStorage.removeItem(endDateKey); // Clear the stored date when the countdown ends
 			}
 			
 			seconds = eventDate - currentDate;
