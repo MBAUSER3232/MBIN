@@ -85,3 +85,20 @@
 		
 	}
 }) (jQuery);
+
+
+<div id="ninety-day-countdown">
+    <span class="days"></span> <span class="timeRefDays"></span>
+    <span class="hours"></span> <span class="timeRefHours"></span>
+    <span class="minutes"></span> <span class="timeRefMinutes"></span>
+    <span class="seconds"></span> <span class="timeRefSeconds"></span>
+</div>
+
+
+$('#ninety-day-countdown').countdown({
+    format: 'on'
+}, function() {
+    // Callback function when countdown is complete
+    console.log('90-day countdown is over!');
+});
+
