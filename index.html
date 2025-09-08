@@ -1,210 +1,937 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Coming Soon by templatemo</title>
-    <meta name="keywords" content="">
-	<meta name="description" content="">
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 
-	Coming Soon Template
-	https://templatemo.com/tm-462-coming-soon
-    -->
-	<!-- stylesheet css -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/templatemo-style.css">
-	<!-- google web font css -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Bilal - Professional Accountant</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #1a5276;
+            --secondary: #2e86c1;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #e67e22;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #154360;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .section-title {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px 0;
+        }
+        
+        .text-center .section-title:after {
+            margin: 15px auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a5276"/><path d="M0 0L100 100" stroke="%232e86c1" stroke-width="1"/><path d="M100 0L0 100" stroke="%232e86c1" stroke-width="1"/></svg>');
+            background-size: cover;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 15px;
+        }
+        
+        .service-content ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .service-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .differentiators {
+            margin-top: 30px;
+        }
+        
+        .differentiator {
+            margin-bottom: 25px;
+        }
+        
+        .differentiator h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            padding: 20px 0;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: var(--light);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 10px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ccc;
+        }
+        
+        .footer-col ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Page Sections */
+        .page-section {
+            display: none;
+            padding: 100px 0 80px;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+        }
+    </style>
 </head>
-<body data-spy="scroll" data-target=".navbar-collapse">
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Mohammed <span>Bilal</span></div>
+            <div class="mobile-menu-btn">☰</div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- preloader section -->
-<div class="preloader">
-	<div class="sk-spinner sk-spinner-three-bounce">
-       <div class="sk-bounce1"></div>
-       <div class="sk-bounce2"></div>
-       <div class="sk-bounce3"></div>
-     </div>
-</div>
+    <!-- Home Section -->
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="container">
+                <h1>Your Partner in Financial Clarity and Growth</h1>
+                <p>Professional accounting, tax, and compliance services designed to simplify your financial life and empower your business.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Book a Consultation</a>
+                    <a href="#services" class="btn btn-secondary">Explore All Services</a>
+                </div>
+            </div>
+        </div>
 
-<!-- navigation -->
-<div class="navbar navbar-default navbar-fixed-top sticky-navigation" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-				<span class="icon icon-bar"></span>
-			</button>
-			<a href="#" class="navbar-brand"><strong>Coming Soon</strong></a>
-		</div>
-		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right main-navigation">
-				<li><a href="#home" class="smoothScroll">HOME</a></li>
-				<li><a href="#about" class="smoothScroll">ABOUT US</a></li>
-				<li><a href="#work" class="smoothScroll">WORK</a></li>
-				<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
+        <div class="container">
+            <div class="intro-text" style="margin-top: 60px;">
+                <p>Mohammed Bilal provides professional accounting services, offering expert financial solutions for individuals and businesses. The services specialize in tax compliance, GST, company law, and accounting. The goal is to allow clients to focus on business growth and achieving financial goals.</p>
+            </div>
 
-<!-- home section -->
-<div id="home">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-offset-2 col-md-10 col-sm-10 col-sm-offset-2">
-				<h2 class="wow bounceIn" data-wow-delay="0.9s">DESIGN AGENCY</h2>
-				<h1 class="wow bounceInUp" data-wow-delay="1s">COMING SOON TEMPLATE</h1>
-			</div>
-		</div>
-	</div>		
-</div>
+            <div class="services-highlight" style="margin-top: 60px;">
+                <h2 class="section-title text-center">Featured Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>Income Tax & TDS</h3>
+                            <p>Tax filing and consultation for individuals and businesses.</p>
+                            <a href="#services" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>GST Services</h3>
+                            <p>GST compliance, from registration to reconciliation.</p>
+                            <a href="#services" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>Company Law & LLP</h3>
+                            <p>Incorporation and compliance services for companies and LLPs.</p>
+                            <a href="#services" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>Accounting & Auditing</h3>
+                            <p>Financial oversight and record-keeping services.</p>
+                            <a href="#services" class="btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- countdown section -->
-<div id="countdown">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12 countdown-des">
-				<h2 class="wow bounceIn" data-wow-delay="1.9s">New website is coming up!</h2>
-				<h1>We are almost ready to launch</h1>
-				<p>This responsive template is brought to you by templatemo website. Feel free to download and use this layout. You can set the countdown date and time in <span class="orange">init.js</span> file inside <span class="orange">js</span> folder.</p>
-				<ul class="countdown">
-					<li class="wow bounceIn col-md-3 col-sm-6" data-wow-delay="0.3s">
-						<span class="days">180</span>
-						<h3>days</h3>
-					</li>
-					<li class="wow bounceIn col-md-3 col-sm-6" data-wow-delay="0.6s">
-						<span class="hours">10</span>
-						<h3>hours</h3>
-					</li>
-					<li class="wow bounceIn col-md-3 col-sm-6" data-wow-delay="0.9s">
-						<span class="minutes">20</span>
-						<h3>minutes</h3>
-					</li>
-					<li class="wow bounceIn col-md-3 col-sm-6" data-wow-delay="1s">
-						<span class="seconds">30</span>
-						<h3>seconds</h3>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
+    <!-- About Section -->
+    <section id="about" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Your Trusted Financial Advisor</h2>
+            
+            <div class="about-content">
+                <div>
+                    <p>Mohammed Bilal is a professional accountant committed to providing personalized and precise financial services. The practice is built on integrity, expertise, and understanding of India's financial landscape. Long-term relationships with clients are built by offering clear, strategic advice that goes beyond compliance.</p>
+                    
+                    <div class="differentiators">
+                        <div class="differentiator">
+                            <h4>Personalized Approach</h4>
+                            <p>Tailored solutions address individual financial challenges and goals.</p>
+                        </div>
+                        
+                        <div class="differentiator">
+                            <h4>Up-to-Date Expertise</h4>
+                            <p>Staying current with tax laws and regulations ensures financial compliance.</p>
+                        </div>
+                        
+                        <div class="differentiator">
+                            <h4>Transparent Communication</h4>
+                            <p>Clear explanations and proactive advice keep clients informed.</p>
+                        </div>
+                        
+                        <div class="differentiator">
+                            <h4>Client-Centric Service</h4>
+                            <p>Providing reliable and timely support to help clients thrive.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' fill='%23f39c12' opacity='0.2'/><circle cx='150' cy='150' r='100' fill='%231a5276' opacity='0.6'/><circle cx='350' cy='150' r='80' fill='%232e86c1' opacity='0.6'/></svg>" alt="Financial Visualization" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- about section -->
-<div id="about">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-7 about-des wow slideInLeft">
-				<h2>Web Design</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet.</p>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-			</div>
-			<div class="col-md-1 col-sm-1"></div>
-			<div class="col-md-4 col-sm-4 about-img">
-				<img src="images/about-img.png" class="img-responsive" alt="about">
-			</div>
-		</div>
-	</div>
-</div>
+    <!-- Services Section -->
+    <section id="services" class="page-section">
+        <div class="container">
+            <h2 class="section-title text-center">Comprehensive Financial Services</h2>
+            <p class="text-center">The range of services covers all financial needs, from tax filings to corporate compliance and audits. Expert support is provided across key areas to ensure accuracy, compliance, and peace of mind.</p>
+            
+            <div class="services-detailed" style="margin-top: 60px;">
+                <div class="service-category">
+                    <h3>Income Tax & TDS</h3>
+                    <div class="service-card">
+                        <div class="service-content">
+                            <ul>
+                                <li><strong>ITR Filing:</strong> Preparation and e-filing of Income Tax Returns for individuals and businesses.</li>
+                                <li><strong>TDS Filing:</strong> Filing of TDS returns to ensure compliance.</li>
+                                <li><strong>Trust 12A & 80G:</strong> Assistance with registration and compliance for trusts under Sections 12A and 80G.</li>
+                                <li><strong>Tax Audit Support:</strong> Support to prepare for and navigate tax audits.</li>
+                                <li><strong>Tax Consultant:</strong> Tax planning and advisory to minimize liabilities and maximize savings.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-category" style="margin-top: 40px;">
+                    <h3>GST</h3>
+                    <div class="service-card">
+                        <div class="service-content">
+                            <ul>
+                                <li><strong>GST Registration:</strong> Simplified process for obtaining GST registration.</li>
+                                <li><strong>GST Return Filings:</strong> Filing of all GSTRs.</li>
+                                <li><strong>GST Audit:</strong> Support for GST audits.</li>
+                                <li><strong>GST ITC Reconciliation:</strong> Reconciliation of Input Tax Credit to maximize benefits.</li>
+                                <li><strong>Handling Notices:</strong> Handling of GST notices and compliance issues.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-category" style="margin-top: 40px;">
+                    <h3>Company Law & LLP</h3>
+                    <div class="service-card">
+                        <div class="service-content">
+                            <ul>
+                                <li><strong>Company & LLP Incorporation:</strong> Services for the incorporation of a company or Limited Liability Partnership.</li>
+                                <li><strong>Annual Filings:</strong> Filing of all annual returns and required forms with the ROC/MCA.</li>
+                                <li><strong>ROC/MCA Compliances:</strong> Management of all regulatory requirements.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-category" style="margin-top: 40px;">
+                    <h3>Accounting & Auditing</h3>
+                    <div class="service-card">
+                        <div class="service-content">
+                            <ul>
+                                <li><strong>Complete Accounting:</strong> Accounting services, from transaction recording to financial statement preparation.</li>
+                                <li><strong>Book Keeping:</strong> Record-keeping to maintain financial accuracy.</li>
+                                <li><strong>Internal Audits:</strong> Independent internal audits to enhance controls and identify inefficiencies.</li>
+                                <li><strong>Stock Audits:</strong> Physical verification and valuation of inventory.</li>
+                                <li><strong>PAN, TAN, IEC:</strong> Application and management for Permanent Account Numbers, Tax Deduction Account Numbers, and Import Export Codes.</li>
+                                <li><strong>Digital Signature Certificate (DSC):</strong> Guidance and processing for obtaining and renewing Digital Signature Certificates.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- work section -->
-<div id="work">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12 work-des">
-				<div class="col-md-12 col-sm-12 work-title">
-					<h2 class="wow bounceIn">OUR WORK</h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat. Thank you for visiting our website.</p>
-				</div>
-				<div class="col-md-6 col-sm-6 border-right border-bottom wow rollIn">
-					<i class="fa fa-dribbble"></i>
-					<h3>WEBSITE</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-				</div>
-				<div class="col-md-6 col-sm-6 border-bottom wow rollIn">
-					<i class="fa fa-link"></i>
-					<h3>MOBILE APP</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-				</div>
-				<div class="col-md-6 col-sm-6 border-right wow bounceIn" data-wow-delay="0.3s">
-					<i class="fa fa-mobile"></i>
-					<h3>UX DESIGN</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-				</div>
-				<div class="col-md-6 col-sm-6 wow bounceIn" data-wow-delay="0.6s">
-					<i class="fa fa-cloud"></i>
-					<h3>SOCIAL MEDIA</h3>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- contact section -->
-<div id="contact">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 col-sm-4">
-				<h2 class="wow bounceIn">OUR OFFICE</h2>
-				<p><i class="fa fa-phone"></i> Tel: 010-020-0340 | 090-080-0760</p>
-				<p><i class="fa fa-globe"></i> URL: www.company.com</p>
-				<p><i class="fa fa-envelope-o"></i> Email: info@company.com</p>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<h2 class="wow bounceIn">SOCIAL MEDIA</h2>
-				<ul class="social-icons">
-					<li class="wow fadeIn" data-wow-delay="0.4s"><a href="#" class="fa fa-facebook"></a></li>
-					<li class="wow fadeIn" data-wow-delay="0.8s"><a href="#" class="fa fa-twitter"></a></li>
-					<li class="wow fadeIn" data-wow-delay="1.2s"><a href="#" class="fa fa-dribbble"></a></li>
-					<li class="wow fadeIn" data-wow-delay="1.6s"><a href="#" class="fa fa-pinterest"></a></li>
-					<li class="wow fadeIn" data-wow-delay="1.2s"><a href="#" class="fa fa-behance"></a></li>
-					<li class="wow fadeIn" data-wow-delay="1.6s"><a href="#" class="fa fa-github"></a></li>
-				</ul>
-			</div>
-			<div class="col-md-4 col-sm-4 newsletter">
-				<h2 class="wow bounceIn">SUBSCRIBE NOW</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam n.</p>
-				<div class="input-group">
-					<form action="#" method="get" id="subscribe">
-                        <input name="email" type="email" placeholder="Your Email" class="form-control">
-                        <input name="submit" type="submit" class="form-control" id="submit" value="submit">
+    <!-- Contact Section -->
+    <section id="contact" class="page-section">
+        <div class="container">
+            <h2 class="section-title text-center">Get in Touch</h2>
+            <p class="text-center">Contact Mohammed Bilal today to discuss accounting and compliance needs. Expert guidance and support is provided.</p>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
-				 </div>
-			</div>
-		</div>
-	</div>
-</div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-detail">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 97902 23232</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@mohammedbilal.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Chennai, Tamil Nadu, India</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px;">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'><rect width='400' height='200' fill='%23ecf0f1'/><path d='M200,100 L250,50 L300,80 L350,30' stroke='%232e86c1' stroke-width='3' fill='none'/><circle cx='200' cy='100' r='10' fill='%23e74c3c'/></svg>" alt="Location Map" style="width: 100%; border-radius: 8px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- copyright section -->
-<div class="copyright">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<p>Copyright &copy; 2018 Company Name 
-                | Design: <a rel="nofollow" href="https://templatemo.com">templatemo</a> 
-                | Images by <a rel="nofollow" href="https://pixabay.com">Pixabay</a></p>
-			</div>
-		</div>
-	</div>
-</div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="page-section">
+        <div class="container">
+            <h2 class="section-title text-center">Client Testimonials</h2>
+            <p class="text-center">Here's what our clients have to say about our services.</p>
+            
+            <div class="testimonials-container" style="margin-top: 40px;">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Mohammed Bilal has been handling our company's accounting and tax needs for the past three years. His expertise and attention to detail have saved us both time and money. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">- Rajesh Kumar, Business Owner</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"I was struggling with GST compliance for my small business until I found Mohammed Bilal. His knowledge of the regulations and prompt service have made the entire process seamless."</p>
+                    </div>
+                    <div class="testimonial-author">- Priya S, Entrepreneur</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The team provided excellent support during our tax audit. Their thorough preparation and professional approach made a stressful situation much more manageable. Thank you!"</p>
+                    </div>
+                    <div class="testimonial-author">- Anil Mehta, Director</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- javascript js -->	
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>	
-<script src="js/smoothscroll.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/countdown.js"></script>
-<script src="js/init.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/custom.js"></script>
+    <!-- FAQ Section -->
+    <section id="faq" class="page-section">
+        <div class="container">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+            
+            <div class="faq-container" style="margin-top: 40px;">
+                <div class="faq-item">
+                    <div class="faq-question">What accounting services do you offer? <span>+</span></div>
+                    <div class="faq-answer">
+                        <p>We offer a comprehensive range of accounting services including bookkeeping, financial statement preparation, tax filing, GST compliance, company incorporation, auditing, and more. Please see our Services page for complete details.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do you charge for your services? <span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Our fees depend on the scope and complexity of the services required. We offer both project-based pricing and ongoing retainer arrangements. Contact us for a personalized quote based on your specific needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What information do I need to provide for tax filing? <span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Typically, you'll need to provide documents such as Form 16, bank statements, investment proofs, rent receipts (if applicable), home loan statements, and details of any other income sources. We provide a comprehensive checklist once you engage our services.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to incorporate a company? <span>+</span></div>
+                    <div class="faq-answer">
+                        <p>The timeline for company incorporation can vary but typically takes between 10-15 working days, depending on the documentation provided and government processing times. We streamline the process to make it as efficient as possible.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you handle GST registration for businesses outside Chennai? <span>+</span></div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide GST registration and compliance services for businesses across India. Our digital processes allow us to efficiently serve clients regardless of location.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Mohammed Bilal</h3>
+                    <p>Professional accounting services offering expert financial solutions for individuals and businesses.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Income Tax & TDS</a></li>
+                        <li><a href="#services">GST Services</a></li>
+                        <li><a href="#services">Company Law & LLP</a></li>
+                        <li><a href="#services">Accounting & Auditing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📞 +91 97902 23232</li>
+                        <li>✉️ contact@mohammedbilal.in</li>
+                        <li>📍 Chennai, Tamil Nadu, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Mohammed Bilal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+            
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+            
+            // Navigation click handling
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get target section
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Update active nav link
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show target section
+                    pageSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === targetId) {
+                            section.classList.add('active');
+                        }
+                    });
+                    
+                    // Close mobile menu if open
+                    mainNav.classList.remove('active');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+            
+            // FAQ toggle functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                    
+                    const plusSign = this.querySelector('span');
+                    plusSign.textContent = faqItem.classList.contains('active') ? '-' : '+';
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message. We will get back to you soon!');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
