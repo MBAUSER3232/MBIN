@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Bilal - Professional Accountant</title>
+    <title>Mohammed Bilal | Professional Accountant & Financial Advisor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
         :root {
-            --primary: #1a5276;
-            --secondary: #2e86c1;
-            --accent: #f39c12;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #27ae60;
+            --primary: #D4AF37;
+            --primary-dark: #B8941F;
+            --secondary: #1A1A1A;
+            --secondary-light: #2A2A2A;
+            --accent: #FFD700;
+            --light: #E5E5E5;
+            --dark: #0F0F0F;
+            --text: #CCCCCC;
+            --text-dark: #888888;
+            --gradient: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+            --matte-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
         }
         
         * {
@@ -23,9 +30,14 @@
         }
         
         body {
-            color: #333;
+            color: var(--text);
             line-height: 1.6;
-            background-color: #f9f9f9;
+            background-color: var(--dark);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 50% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 20%);
         }
         
         .container {
@@ -36,66 +48,80 @@
         }
         
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         h1, h2, h3, h4 {
             margin-bottom: 20px;
-            color: var(--dark);
+            color: var(--light);
+            font-weight: 600;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            line-height: 1.2;
         }
         
         h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary);
         }
         
         h3 {
-            font-size: 1.5rem;
-            color: var(--secondary);
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        h4 {
+            font-size: 1.4rem;
         }
         
         p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text);
         }
         
         a {
             text-decoration: none;
-            color: var(--secondary);
-            transition: color 0.3s;
+            color: var(--primary);
+            transition: all 0.3s ease;
         }
         
         a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--accent);
-            color: white;
+            padding: 14px 32px;
+            background: var(--gradient-gold);
+            color: var(--dark);
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
-            transition: background-color 0.3s;
+            font-size: 1rem;
+            transition: all 0.3s ease;
             text-align: center;
+            box-shadow: var(--matte-shadow);
         }
         
         .btn:hover {
-            background-color: #e67e22;
-            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
+            color: var(--dark);
         }
         
         .btn-secondary {
-            background-color: var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
         
         .btn-secondary:hover {
-            background-color: #154360;
+            background: var(--primary);
+            color: var(--dark);
         }
         
         .text-center {
@@ -103,17 +129,18 @@
         }
         
         .section-title {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             position: relative;
         }
         
         .section-title:after {
             content: '';
             display: block;
-            width: 80px;
+            width: 100px;
             height: 4px;
-            background: var(--accent);
+            background: var(--gradient-gold);
             margin: 15px 0;
+            border-radius: 5px;
         }
         
         .text-center .section-title:after {
@@ -122,28 +149,65 @@
         
         /* Header Styles */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(15, 15, 15, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo-badge {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            position: relative;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .logo-badge:before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--dark);
+            border-radius: 50%;
+        }
+        
+        .logo-badge-text {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--dark);
+            z-index: 1;
+        }
+        
+        .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
         }
         
-        .logo span {
+        .logo-text span {
             color: var(--accent);
         }
         
@@ -157,41 +221,78 @@
         }
         
         nav ul li a {
-            color: var(--dark);
+            color: var(--text);
             font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover:after, 
+        nav ul li a.active:after {
+            width: 100%;
         }
         
         nav ul li a:hover, 
         nav ul li a.active {
             color: var(--primary);
-            border-bottom: 2px solid var(--accent);
         }
         
         .mobile-menu-btn {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a5276"/><path d="M0 0L100 100" stroke="%232e86c1" stroke-width="1"/><path d="M100 0L0 100" stroke="%232e86c1" stroke-width="1"/></svg>');
+            background: 
+                linear-gradient(135deg, rgba(15, 15, 15, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23D4AF37" stop-opacity="0.1"/><stop offset="100%" stop-color="%23FFD700" stop-opacity="0.1"/></linearGradient></defs><rect width="100" height="100" fill="url(%23goldGradient)"/><path d="M0,0 L100,100" stroke="%23D4AF37" stroke-width="1" stroke-opacity="0.2"/><path d="M0,20 L80,100" stroke="%23D4AF37" stroke-width="1" stroke-opacity="0.2"/><path d="M0,40 L60,100" stroke="%23D4AF37" stroke-width="1" stroke-opacity="0.2"/><path d="M20,0 L100,80" stroke="%23D4AF37" stroke-width="1" stroke-opacity="0.2"/><path d="M40,0 L100,60" stroke="%23D4AF37" stroke-width="1" stroke-opacity="0.2"/></svg>');
             background-size: cover;
-            color: white;
-            padding: 150px 0 100px;
+            color: var(--light);
+            padding: 180px 0 120px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 45%, rgba(212, 175, 55, 0.03) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(212, 175, 55, 0.03) 50%, transparent 55%);
+            background-size: 50px 50px;
         }
         
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
             color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
         }
         
         .hero-buttons {
@@ -201,6 +302,23 @@
         }
         
         /* Services Section */
+        .services {
+            background: var(--secondary);
+            position: relative;
+        }
+        
+        .services:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 70% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+        }
+        
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -208,24 +326,45 @@
         }
         
         .service-card {
-            background: white;
-            border-radius: 8px;
+            background: var(--secondary-light);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--matte-shadow);
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
         
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .service-icon {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-gold);
+            color: var(--dark);
+            font-size: 2.5rem;
         }
         
         .service-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .service-content h3 {
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-content h3 i {
+            margin-right: 10px;
+            color: var(--accent);
         }
         
         .service-content ul {
@@ -234,23 +373,47 @@
         }
         
         .service-content li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            position: relative;
+            color: var(--text);
+        }
+        
+        .service-content li:before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
         }
         
         /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
         
         .differentiators {
-            margin-top: 30px;
+            margin-top: 40px;
         }
         
         .differentiator {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            display: flex;
+        }
+        
+        .differentiator-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
         }
         
         .differentiator h4 {
@@ -258,38 +421,89 @@
             margin-bottom: 10px;
         }
         
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--matte-shadow);
+            position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            opacity: 0.05;
+        }
+        
         /* Contact Section */
+        .contact {
+            background: var(--secondary);
+            position: relative;
+        }
+        
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 40%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+        }
+        
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
         }
         
         .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: var(--secondary-light);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--matte-shadow);
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
+            color: var(--light);
         }
         
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 6px;
             font-size: 1rem;
+            transition: border 0.3s, box-shadow 0.3s;
+            background: var(--secondary);
+            color: var(--text);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+            outline: none;
         }
         
         .form-group textarea {
@@ -304,44 +518,24 @@
         .contact-detail {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--light);
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            color: var(--primary);
-            font-size: 1.2rem;
+            margin-right: 20px;
+            color: var(--dark);
+            font-size: 1.5rem;
         }
         
-        /* Testimonials Section */
-        .testimonials-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
-        
-        .testimonial-content {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary);
+        .contact-detail h4 {
+            margin-bottom: 5px;
         }
         
         /* FAQ Section */
@@ -352,39 +546,53 @@
         
         .faq-item {
             margin-bottom: 20px;
-            background: white;
-            border-radius: 8px;
+            background: var(--secondary-light);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--matte-shadow);
+            transition: box-shadow 0.3s;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-color: rgba(212, 175, 55, 0.2);
         }
         
         .faq-question {
-            padding: 20px;
+            padding: 25px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            background: var(--light);
+            background: var(--secondary);
+            transition: background 0.3s;
+            color: var(--light);
+        }
+        
+        .faq-question:hover {
+            background: rgba(212, 175, 55, 0.05);
         }
         
         .faq-answer {
-            padding: 0 20px;
+            padding: 0 25px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s, padding 0.3s;
         }
         
         .faq-item.active .faq-answer {
-            padding: 20px;
+            padding: 0 25px 25px;
             max-height: 500px;
         }
         
         /* Footer */
         footer {
             background: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
+            color: var(--text);
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
         
         .footer-container {
@@ -394,8 +602,8 @@
         }
         
         .footer-col h3 {
-            color: white;
-            margin-bottom: 20px;
+            color: var(--primary);
+            margin-bottom: 25px;
             position: relative;
         }
         
@@ -404,7 +612,7 @@
             display: block;
             width: 40px;
             height: 3px;
-            background: var(--accent);
+            background: var(--gradient-gold);
             margin-top: 10px;
         }
         
@@ -413,28 +621,31 @@
         }
         
         .footer-col ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-col ul li a {
-            color: #ccc;
+            color: var(--text);
+            transition: color 0.3s;
         }
         
         .footer-col ul li a:hover {
-            color: white;
+            color: var(--primary);
+            padding-left: 5px;
         }
         
         .copyright {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-dark);
         }
         
         /* Page Sections */
         .page-section {
             display: none;
-            padding: 100px 0 80px;
+            padding: 120px 0 80px;
         }
         
         .page-section.active {
@@ -447,6 +658,14 @@
             .contact-container {
                 grid-template-columns: 1fr;
             }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -456,7 +675,7 @@
             }
             
             nav {
-                margin-top: 15px;
+                margin-top: 20px;
             }
             
             nav ul {
@@ -469,7 +688,11 @@
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
             }
             
             .hero-buttons {
@@ -480,16 +703,21 @@
             .mobile-menu-btn {
                 display: block;
                 position: absolute;
-                top: 20px;
+                top: 25px;
                 right: 20px;
             }
             
             nav {
                 display: none;
+                width: 100%;
             }
             
             nav.active {
                 display: block;
+            }
+            
+            section {
+                padding: 80px 0;
             }
         }
     </style>
@@ -498,7 +726,12 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">Mohammed <span>Bilal</span></div>
+            <div class="logo">
+                <div class="logo-badge">
+                    <div class="logo-badge-text">MBA</div>
+                </div>
+                <div class="logo-text">Mohammed <span>Bilal</span></div>
+            </div>
             <div class="mobile-menu-btn">☰</div>
             <nav id="main-nav">
                 <ul>
@@ -506,7 +739,6 @@
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
                 </ul>
             </nav>
@@ -527,40 +759,52 @@
         </div>
 
         <div class="container">
-            <div class="intro-text" style="margin-top: 60px;">
-                <p>Mohammed Bilal provides professional accounting services, offering expert financial solutions for individuals and businesses. The services specialize in tax compliance, GST, company law, and accounting. The goal is to allow clients to focus on business growth and achieving financial goals.</p>
+            <div class="intro-text" style="margin-top: 80px;">
+                <p style="font-size: 1.2rem; text-align: center; max-width: 900px; margin: 0 auto;">Mohammed Bilal provides professional accounting services, offering expert financial solutions for individuals and businesses. The services specialize in tax compliance, GST, company law, and accounting. The goal is to allow clients to focus on business growth and achieving financial goals.</p>
             </div>
 
-            <div class="services-highlight" style="margin-top: 60px;">
+            <div class="services-highlight" style="margin-top: 80px;">
                 <h2 class="section-title text-center">Featured Services</h2>
                 <div class="services-grid">
                     <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
                         <div class="service-content">
-                            <h3>Income Tax & TDS</h3>
+                            <h3><i class="fas fa-file-invoice-dollar"></i> Income Tax & TDS</h3>
                             <p>Tax filing and consultation for individuals and businesses.</p>
                             <a href="#services" class="btn">Learn More</a>
                         </div>
                     </div>
                     
                     <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
                         <div class="service-content">
-                            <h3>GST Services</h3>
+                            <h3><i class="fas fa-receipt"></i> GST Services</h3>
                             <p>GST compliance, from registration to reconciliation.</p>
                             <a href="#services" class="btn">Learn More</a>
                         </div>
                     </div>
                     
                     <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
                         <div class="service-content">
-                            <h3>Company Law & LLP</h3>
+                            <h3><i class="fas fa-landmark"></i> Company Law & LLP</h3>
                             <p>Incorporation and compliance services for companies and LLPs.</p>
                             <a href="#services" class="btn">Learn More</a>
                         </div>
                     </div>
                     
                     <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                         <div class="service-content">
-                            <h3>Accounting & Auditing</h3>
+                            <h3><i class="fas fa-chart-line"></i> Accounting & Auditing</h3>
                             <p>Financial oversight and record-keeping services.</p>
                             <a href="#services" class="btn">Learn More</a>
                         </div>
@@ -577,49 +821,69 @@
             
             <div class="about-content">
                 <div>
-                    <p>Mohammed Bilal is a professional accountant committed to providing personalized and precise financial services. The practice is built on integrity, expertise, and understanding of India's financial landscape. Long-term relationships with clients are built by offering clear, strategic advice that goes beyond compliance.</p>
+                    <p style="font-size: 1.2rem;">Mohammed Bilal is a professional accountant committed to providing personalized and precise financial services. The practice is built on integrity, expertise, and understanding of India's financial landscape. Long-term relationships with clients are built by offering clear, strategic advice that goes beyond compliance.</p>
                     
                     <div class="differentiators">
                         <div class="differentiator">
-                            <h4>Personalized Approach</h4>
-                            <p>Tailored solutions address individual financial challenges and goals.</p>
+                            <div class="differentiator-icon">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                            <div>
+                                <h4>Personalized Approach</h4>
+                                <p>Tailored solutions address individual financial challenges and goals.</p>
+                            </div>
                         </div>
                         
                         <div class="differentiator">
-                            <h4>Up-to-Date Expertise</h4>
-                            <p>Staying current with tax laws and regulations ensures financial compliance.</p>
+                            <div class="differentiator-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4>Up-to-Date Expertise</h4>
+                                <p>Staying current with tax laws and regulations ensures financial compliance.</p>
+                            </div>
                         </div>
                         
                         <div class="differentiator">
-                            <h4>Transparent Communication</h4>
-                            <p>Clear explanations and proactive advice keep clients informed.</p>
+                            <div class="differentiator-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div>
+                                <h4>Transparent Communication</h4>
+                                <p>Clear explanations and proactive advice keep clients informed.</p>
+                            </div>
                         </div>
                         
                         <div class="differentiator">
-                            <h4>Client-Centric Service</h4>
-                            <p>Providing reliable and timely support to help clients thrive.</p>
+                            <div class="differentiator-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4>Client-Centric Service</h4>
+                                <p>Providing reliable and timely support to help clients thrive.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div>
-                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' fill='%23f39c12' opacity='0.2'/><circle cx='150' cy='150' r='100' fill='%231a5276' opacity='0.6'/><circle cx='350' cy='150' r='80' fill='%232e86c1' opacity='0.6'/></svg>" alt="Financial Visualization" style="width: 100%; border-radius: 8px;">
+                <div class="about-image">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='400' viewBox='0 0 500 400'><rect width='500' height='400' fill='%231A1A1A'/><circle cx='250' cy='200' r='150' fill='%23D4AF37' opacity='0.1'/><rect x='150' y='150' width='200' height='100' fill='%23D4AF37' opacity='0.2'/></svg>" alt="Financial Visualization" style="width: 100%; display: block;">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="page-section">
+    <section id="services" class="page-section services">
         <div class="container">
             <h2 class="section-title text-center">Comprehensive Financial Services</h2>
-            <p class="text-center">The range of services covers all financial needs, from tax filings to corporate compliance and audits. Expert support is provided across key areas to ensure accuracy, compliance, and peace of mind.</p>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px;">The range of services covers all financial needs, from tax filings to corporate compliance and audits. Expert support is provided across key areas to ensure accuracy, compliance, and peace of mind.</p>
             
-            <div class="services-detailed" style="margin-top: 60px;">
+            <div class="services-detailed">
                 <div class="service-category">
-                    <h3>Income Tax & TDS</h3>
                     <div class="service-card">
                         <div class="service-content">
+                            <h3><i class="fas fa-file-invoice-dollar"></i> Income Tax & TDS</h3>
                             <ul>
                                 <li><strong>ITR Filing:</strong> Preparation and e-filing of Income Tax Returns for individuals and businesses.</li>
                                 <li><strong>TDS Filing:</strong> Filing of TDS returns to ensure compliance.</li>
@@ -631,10 +895,10 @@
                     </div>
                 </div>
                 
-                <div class="service-category" style="margin-top: 40px;">
-                    <h3>GST</h3>
+                <div class="service-category" style="margin-top: 30px;">
                     <div class="service-card">
                         <div class="service-content">
+                            <h3><i class="fas fa-receipt"></i> GST</h3>
                             <ul>
                                 <li><strong>GST Registration:</strong> Simplified process for obtaining GST registration.</li>
                                 <li><strong>GST Return Filings:</strong> Filing of all GSTRs.</li>
@@ -646,10 +910,10 @@
                     </div>
                 </div>
                 
-                <div class="service-category" style="margin-top: 40px;">
-                    <h3>Company Law & LLP</h3>
+                <div class="service-category" style="margin-top: 30px;">
                     <div class="service-card">
                         <div class="service-content">
+                            <h3><i class="fas fa-landmark"></i> Company Law & LLP</h3>
                             <ul>
                                 <li><strong>Company & LLP Incorporation:</strong> Services for the incorporation of a company or Limited Liability Partnership.</li>
                                 <li><strong>Annual Filings:</strong> Filing of all annual returns and required forms with the ROC/MCA.</li>
@@ -659,10 +923,10 @@
                     </div>
                 </div>
                 
-                <div class="service-category" style="margin-top: 40px;">
-                    <h3>Accounting & Auditing</h3>
+                <div class="service-category" style="margin-top: 30px;">
                     <div class="service-card">
                         <div class="service-content">
+                            <h3><i class="fas fa-chart-line"></i> Accounting & Auditing</h3>
                             <ul>
                                 <li><strong>Complete Accounting:</strong> Accounting services, from transaction recording to financial statement preparation.</li>
                                 <li><strong>Book Keeping:</strong> Record-keeping to maintain financial accuracy.</li>
@@ -679,7 +943,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="page-section">
+    <section id="contact" class="page-section contact">
         <div class="container">
             <h2 class="section-title text-center">Get in Touch</h2>
             <p class="text-center">Contact Mohammed Bilal today to discuss accounting and compliance needs. Expert guidance and support is provided.</p>
@@ -718,7 +982,9 @@
                 
                 <div class="contact-info">
                     <div class="contact-detail">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
                         <div>
                             <h4>Phone</h4>
                             <p>+91 97902 23232</p>
@@ -726,7 +992,9 @@
                     </div>
                     
                     <div class="contact-detail">
-                        <div class="contact-icon">✉️</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
                         <div>
                             <h4>Email</h4>
                             <p>contact@mohammedbilal.in</p>
@@ -734,7 +1002,9 @@
                     </div>
                     
                     <div class="contact-detail">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
                         <div>
                             <h4>Address</h4>
                             <p>Chennai, Tamil Nadu, India</p>
@@ -742,39 +1012,8 @@
                     </div>
                     
                     <div style="margin-top: 40px;">
-                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'><rect width='400' height='200' fill='%23ecf0f1'/><path d='M200,100 L250,50 L300,80 L350,30' stroke='%232e86c1' stroke-width='3' fill='none'/><circle cx='200' cy='100' r='10' fill='%23e74c3c'/></svg>" alt="Location Map" style="width: 100%; border-radius: 8px;">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200' viewBox='0 0 400 200'><rect width='400' height='200' fill='%231A1A1A'/><path d='M200,100 L250,50 L300,80 L350,30' stroke='%23D4AF37' stroke-width='3' fill='none'/><circle cx='200' cy='100' r='10' fill='%23D4AF37'/></svg>" alt="Location Map" style="width: 100%; border-radius: 10px; box-shadow: var(--matte-shadow);">
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="page-section">
-        <div class="container">
-            <h2 class="section-title text-center">Client Testimonials</h2>
-            <p class="text-center">Here's what our clients have to say about our services.</p>
-            
-            <div class="testimonials-container" style="margin-top: 40px;">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Mohammed Bilal has been handling our company's accounting and tax needs for the past three years. His expertise and attention to detail have saved us both time and money. Highly recommended!"</p>
-                    </div>
-                    <div class="testimonial-author">- Rajesh Kumar, Business Owner</div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"I was struggling with GST compliance for my small business until I found Mohammed Bilal. His knowledge of the regulations and prompt service have made the entire process seamless."</p>
-                    </div>
-                    <div class="testimonial-author">- Priya S, Entrepreneur</div>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"The team provided excellent support during our tax audit. Their thorough preparation and professional approach made a stressful situation much more manageable. Thank you!"</p>
-                    </div>
-                    <div class="testimonial-author">- Anil Mehta, Director</div>
                 </div>
             </div>
         </div>
@@ -856,15 +1095,15 @@
                 <div class="footer-col">
                     <h3>Contact Info</h3>
                     <ul>
-                        <li>📞 +91 97902 23232</li>
-                        <li>✉️ contact@mohammedbilal.in</li>
-                        <li>📍 Chennai, Tamil Nadu, India</li>
+                        <li><i class="fas fa-phone"></i> +91 97902 23232</li>
+                        <li><i class="fas fa-envelope"></i> contact@mohammedbilal.in</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu, India</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Mohammed Bilal. All rights reserved.</p>
+                <p>&copy; 2018 Mohammed Bilal. All rights reserved.</p>
             </div>
         </div>
     </footer>
